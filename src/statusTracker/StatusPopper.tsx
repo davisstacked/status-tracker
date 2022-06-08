@@ -6,6 +6,8 @@ import {
   ClickAwayListener
 } from '@mui/material';
 
+import './popper.css'
+
 const StatusPopper = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -24,12 +26,12 @@ const StatusPopper = () => {
   return (
       <ClickAwayListener onClickAway={handleClickAway}>
       <div>
-      <Button onClick={handleClick} variant="outlined">Doing</Button>
-      <Popper placement="bottom-start" id={id} open={open} anchorEl={anchorEl}>
-        <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
-          The content of the Popper.
-        </Box>
-      </Popper>
+        <Button className="red" onClick={handleClick} variant="outlined">Doing</Button>
+        <Popper placement="bottom-start" id={id} open={open} anchorEl={anchorEl}>
+          <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
+            The content of the Popper.
+          </Box>
+        </Popper>
       </div>
 
       </ClickAwayListener>

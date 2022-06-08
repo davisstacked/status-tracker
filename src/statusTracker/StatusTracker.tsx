@@ -7,13 +7,20 @@ import {
   ClickAwayListener
 } from '@mui/material';
 
+import './StatusTracker.css';
+
 const StatusTrackerPage = () => {
   return (
-    <div>
-        <Stack spacing={1} direction="row" justifyContent="center">
+    <div className="Status-Tracker">
+      <div className="Status-Tracker-container">
+        <div className="popper-and-status-container">
+        <div>Status:</div>
+        <Stack className="popper-container"spacing={1} direction="row" justifyContent="center">
           <StatusPopper />
           <RouteToPopper />
         </Stack>
+        </div>
+      </div>
     </div>
   )
 }
