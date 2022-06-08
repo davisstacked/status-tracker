@@ -1,29 +1,38 @@
 import React, { useState } from 'react';
-import Box from '@mui/material/Box';
-import Popper from '@mui/material/Popper';
+import {
+  Button,
+  Box,
+  Popper,
+  ClickAwayListener
+} from '@mui/material';
 
 const RouteToPopper = () => {
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popper' : undefined;
+
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     console.log('event', event.currentTarget);
     setAnchorEl(anchorEl ? null : event.currentTarget);
   };
+  
+  const handleClickAway = () => {
+    setAnchorEl(null);
+  };
 
-  const open = Boolean(anchorEl);
-  const id = open ? 'simple-popper' : undefined;
   return (
-    <div>
-      <button aria-describedby={id} type="button" onClick={handleClick}>
-        Toggle Popper
-      </button>
-      <Popper id={id} open={open} anchorEl={anchorEl}>
-        <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
-          The content of the Popper.
-        </Box>
-      </Popper>
-    </div>
+    <ClickAwayListener onClickAway={handleClickAway}>
+      <div>
+        <Button variant="outlined" onClick={handleClick}>Route To</Button>
+        <Popper placement="bottom-start" id={id} open={open} anchorEl={anchorEl}>
+          <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
+            The content of the Popper.
+          </Box>
+        </Popper>
+      </div>
+    </ClickAwayListener>
   )
 };
 

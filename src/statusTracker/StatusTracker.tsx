@@ -3,19 +3,17 @@ import RouteToPopper from './RouteToPopper';
 import StatusPopper from './StatusPopper';
 import {
   Stack,
-  Button
+  Button,
+  ClickAwayListener
 } from '@mui/material';
 
 const StatusTrackerPage = () => {
   return (
     <div>
-        <div>StatusTrackerPage</div>
-        <Stack spacing={2} direction="row" justifyContent="center">
-        <Button variant="outlined">Doing</Button>
-        <Button variant="outlined">Route To</Button>
+        <Stack spacing={1} direction="row" justifyContent="center">
+          <StatusPopper />
+          <RouteToPopper />
         </Stack>
-        <RouteToPopper />
-        <StatusPopper />
     </div>
   )
 }
