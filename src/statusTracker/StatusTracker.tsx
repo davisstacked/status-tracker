@@ -13,12 +13,20 @@ const StatusTrackerPage = () => {
   return (
     <div className="Status-Tracker">
       <div className="Status-Tracker-container">
-        <div className="popper-and-status-container">
-        <div>Status:</div>
-        <Stack className="popper-container"spacing={1} direction="row" justifyContent="center">
+        <div className="row">
+          <div className="Status-Tracker-grid-item-1">Status:</div>
+        <div className="popper-row">
           <StatusPopper />
           <RouteToPopper />
-        </Stack>
+        </div>
+        </div>
+        <div className="row">
+          <div>Reviewed By:</div>
+          <div>@Mike Poland</div>
+        </div>
+        <div className="row">
+          <div>Currently With:</div>
+          <div>@Helder Melendez</div>
         </div>
       </div>
     </div>

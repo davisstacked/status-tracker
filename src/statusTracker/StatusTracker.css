@@ -1,5 +1,8 @@
 .Status-Tracker {
-    width: 34rem;
+    width: 34.1rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     height: 14.4rem;
     background-color: #FFFFFF;
     box-shadow: 0px 3px 6px -4px rgba(0, 0, 0, 0.12);
@@ -8,10 +11,37 @@
 }
 
 .Status-Tracker-container {
+}
+
+.Status-Tracker-container {
+    height: 9.6rem;
+    width: 28.2rem;
     background-color: lightblue;
-
+    /* margin: 2rem 3.4rem 2.8rem 2.5rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* grid-template-columns: 
+        repeat(2, 1fr); */
+    /* padding-top: 2rem; */
+    align-items: start;
+    color: #63666A;
 }
 
-.popper-container {
-    padding-top: 2rem;
+.row {
+    display: flex;
+    background-color: pink;
+    width: stretch;
+    flex-direction: row;
+    justify-content:space-between;
+    /* align-items: flex-end; */
 }
+
+.first-item {
+    
+}
+
+.popper-row {
+    display: flex;
+}
+
