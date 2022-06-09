@@ -6,6 +6,8 @@ import {
   ClickAwayListener
 } from '@mui/material';
 
+import './StatusTracker.css';
+
 const RouteToPopper = () => {
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -25,7 +27,9 @@ const RouteToPopper = () => {
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
       <div>
-        <Button variant="outlined" onClick={handleClick}>Route To</Button>
+        <button className="route-to-button" onClick={handleClick}>
+          <div>Route To</div>
+        </button>
         <Popper placement="bottom-start" id={id} open={open} anchorEl={anchorEl}>
           <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
             The content of the Popper.
