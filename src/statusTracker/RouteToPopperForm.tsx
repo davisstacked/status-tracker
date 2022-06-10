@@ -46,7 +46,7 @@ const RouteToPopperForm = () => {
         </div>
         <div className="route-grid-item route-to-item-container">
           <div className="custom-select">
-            <select className="route-select-dropdown" Route-to-item-container id="route-to" name="route">
+            <select className="route-select-dropdown route-to-item-container" id="route-to" name="route">
               <option value="Finalized">Finalized</option>
               <option value="IT Group">IT Group</option>
               <option value="Helder Mendez">Helder Melendez</option>

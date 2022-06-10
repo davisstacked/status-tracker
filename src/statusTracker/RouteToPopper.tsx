@@ -32,10 +32,8 @@ const RouteToPopper = () => {
     <ClickAwayListener onClickAway={handleClickAway}>
       <div>
         <button className="route-to-button status-button-container" onClick={handleClick}>
-        {/* <div className="status-button-container"> */}
               <div><SendOutlinedIcon sx={{fontSize: "12px"}} /></div>
               <div>Route To</div>
-            {/* </div> */}
         </button>
         <Popper placement="bottom-start" id={id} open={open} anchorEl={anchorEl}>
           <Box>
