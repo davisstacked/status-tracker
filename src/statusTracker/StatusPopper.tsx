@@ -28,7 +28,7 @@ const StatusPopper = () => {
       <ClickAwayListener onClickAway={handleClickAway}>
       <div className="status-button-container">
         <button 
-          className="progress-button" 
+          className="doing-button" 
           onClick={handleClick}>
             <div><SyncIcon sx={{fontSize: "12px"}} /></div>
             <div>Doing</div>
