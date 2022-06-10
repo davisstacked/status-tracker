@@ -57,16 +57,16 @@ const StatusPopper = () => {
                 <div>Review Status: </div>
                 <div className="review-status-grid">
                   <button 
-                    className="doing-button review-status-grid-item" 
+                    className="doing-button-2 review-status-grid-item review-status-buttons" 
                     onClick={handleClick}
                   >
                     <div><SyncIcon sx={{fontSize: "12px"}} /></div>
                     <div>Doing</div>
                   </button>  
                   <div className="review-status-grid-item">@Helder Melendez</div>   
-                  <div>04/11/2022 - 5:00 PM</div>
+                  <div className="twelvepx">04/11/2022 - 5:00 PM</div>
                   <button 
-                    className="review-status-grid-item inquire-button review-status-buttons" 
+                    className="review-status-grid-item inquire-button-2 review-status-buttons" 
                     type='submit'>
                       <div>
                         <QuestionMarkIcon />
@@ -76,9 +76,9 @@ const StatusPopper = () => {
                       </div>
                   </button>
                   <div>@Jaya Chigurupati</div>
-                  <div>04/10/2022 - 02:24 PM</div>
+                  <div className="twelvepx">04/10/2022 - 02:24 PM</div>
                   <button 
-                    className="review-status-grid-item reject-button review-status-buttons" 
+                    className="review-status-grid-item reject-button-2 review-status-buttons" 
                     type='submit'>
                       <div>
                           <ThumbDownOffAltIcon />
@@ -88,16 +88,16 @@ const StatusPopper = () => {
                       </div>
                   </button>
                   <div>@Nasar Abbas</div>
-                  <div>04/03/2022 - 2:11 PM</div>
+                  <div className="twelvepx">04/03/2022 - 2:11 PM</div>
                   <button 
-                    className="review-status-grid-item approve-button review-status-buttons" 
+                    className="review-status-grid-item approve-button-2 review-status-buttons" 
                     type='submit'
                   >
                     <div><ThumbUpOffAltIcon /></div>
                     <div>Approve</div>
                   </button>
                   <div>@Mike Poland</div>
-                  <div>04/01/2022 - 5:00 PM</div>
+                  <div className="twelvepx">04/01/2022 - 5:00 PM</div>
                 </div>
               </div>
             </div>
