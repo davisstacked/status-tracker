@@ -63,7 +63,7 @@ const StatusPopper = () => {
                     <div><SyncIcon sx={{fontSize: "12px"}} /></div>
                     <div>Doing</div>
                   </button>  
-                  <div className="review-status-grid-item">@Helder Melendez</div>   
+                  <div>@Helder Melendez</div>   
                   <div className="twelvepx">04/11/2022 - 5:00 PM</div>
                   <button 
                     className="review-status-grid-item inquire-button-2 review-status-buttons" 
