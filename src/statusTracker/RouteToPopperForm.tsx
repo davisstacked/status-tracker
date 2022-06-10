@@ -49,7 +49,7 @@ const RouteToPopperForm = () => {
             <select className="route-select-dropdown" Route-to-item-container id="route-to" name="route">
               <option value="Finalized">Finalized</option>
               <option value="IT Group">IT Group</option>
-              <option value="Helder Mendez">Helder Mendez</option>
+              <option value="Helder Mendez">Helder Melendez</option>
               <option value="Michael Polan">Michael Polan</option>
             </select>
           </div>
@@ -66,7 +66,7 @@ const RouteToPopperForm = () => {
         />
       </div>
       <div className="route-to-button-container">
-      <button className="route-to-button approve-button" type='submit'>
+      <button className="route-to-buttons approve-button" type='submit'>
         <div>
             <ThumbUpOffAltIcon />
         </div>
@@ -74,7 +74,7 @@ const RouteToPopperForm = () => {
           Approve
         </div>
         </button>
-        <button className="route-to-button reject-button" type='submit'>
+        <button className="route-to-buttons reject-button" type='submit'>
             <div>
                 <ThumbDownOffAltIcon />
             </div>
@@ -82,7 +82,7 @@ const RouteToPopperForm = () => {
                 Reject
             </div>
         </button>
-        <button className="route-to-button inquire-button" type='submit'>
+        <button className="route-to-buttons inquire-button" type='submit'>
             <div>
                 <QuestionMarkIcon />
             </div>
