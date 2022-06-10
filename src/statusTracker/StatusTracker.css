@@ -1,5 +1,11 @@
+@font-face {
+    font-family: Prelo;
+    src: url(../Prelo-Black.ttf);
+  }
+
 .Status-Tracker {
     width: 34.1rem;
+    font-family: Prelo;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -22,31 +28,96 @@
         repeat(2, 1fr);
     /* align-items: flex-start; */
     color: #63666A;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 2.2rem;
 }
-
-.grid-item {
-    display: flex;
-    width: stretch; 
-    justify-content:flex-start;
-    align-items: flex-start;
-} 
 
 .popper-row {
     display: flex;
     justify-content: space-between;    
 }
 
+/* ******************* GENERAL STYLING ***************************** */
+.grid-item {
+    display: flex;
+    width: stretch; 
+    justify-content: flex-start;
+    align-items: flex-start;
+} 
+
+
+
 .bold {
     font-weight: 500;
+    color: #000000;
 }
+
 
 /* ***************************ROUTE TO POPPER ************************* */
 
-.Route-To-Popper-Container {
-
+.Route-To-Popper {
+    height: 37.9rem;
+    width: 35.1rem;
+    background-color: #FFFFFF;
+    box-shadow: 0px 9px 28px 8px rgba(0, 0, 0, 0.05), 0px 6px 16px rgba(0, 0, 0, 0.08), 0px 3px 6px -4px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    color: #63666A;
 }
+
+.Route-To-Popper-Form {
+    height: 33rem;
+    width: 30.1rem;
+    background-color: pink;
+}
+
+.Route-To-Popper-Grid {
+    display: grid;
+    grid-template-columns: 
+    repeat(2, 1fr);
+    grid-gap: 1.8rem;
+}
+
+.route-to-item-container {
+    width: 20.4rem;
+    background-color: white;
+    /* height: 4rem; */
+}
+
+.MuiFormControl-root {
+    width: 20.4rem;
+    font-family: Prelo;
+}
+
+.MuiOutlinedInput-input {
+    font-family: Prelo;
+}
+
+.custom-select {
+    position: relative;
+    font-family: Prelo;
+    width: stretch;
+    height: 3.2rem;
+}
+
+.route-select-dropdown {
+    width: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:left;
+    padding: .5rem 1rem .5rem 1.2rem;
+}
+
+.route-grid-item {
+    display: flex;
+    width: stretch; 
+    justify-content: flex-start;
+    align-items: center;
+} 
 
 /* BUTTONS */
 
@@ -62,23 +133,26 @@
     background-color: #E6F7FF;
     color: #1890FF;
     border: 1px solid #91D5FF;
-    width: 8.2rem;
+    width: 6.7rem;
+    font-family: Prelo;
     height: 2.4rem; 
-    font-size: 1rem;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
  }
  
  .route-to-button {
     /* background-color: red; */
     color: #262626;
     flex-direction: row;
-    border: 1px solid #91D5FF;
-    width: 8.2rem;
+    font-family: Prelo;
+    font-weight: regular;
+    border: 1px solid #D9D9D9;
+    width: 9.1rem;
     height: 2.4rem;
     margin-top: .05rem; 
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     border: 1px solid #D9D9D9;
     background-color: #ffffff;
     padding: 1px 8px;

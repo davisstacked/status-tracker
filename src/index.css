@@ -6,13 +6,19 @@ body {
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  sans-serif; */
+  font-family: Prelo;
   font-weight: 400;
   background-color: teal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: Prelo;
+  src: url(Prelo-Black.ttf);
 }
 
 /* RESPONSIVE */

@@ -31,7 +31,7 @@ const StatusPopper = () => {
           className="progress-button" 
           onClick={handleClick}>
             <div><SyncIcon sx={{fontSize: "12px"}} /></div>
-            <div>In Progress</div>
+            <div>Doing</div>
         </button>
         <Popper 
           placement="bottom-start" 
@@ -39,7 +39,7 @@ const StatusPopper = () => {
           open={open} 
           anchorEl={anchorEl}
         >
-          <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
+          <Box>
             <div className="Status-Popper">
               <form action=""></form>
             </div>

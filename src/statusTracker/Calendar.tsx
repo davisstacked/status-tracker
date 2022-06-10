@@ -9,14 +9,17 @@ export default function Calendar() {
 
   return (
     <LocalizationProvider dateAdapter={AdapterMoment}>
-      <DatePicker
-        label="Select time"
-        value={value}
-        onChange={(newValue) => {
-          setValue(newValue);
-        }}
-        renderInput={(params) => <TextField {...params} />}
-      />
+      <div className="Rout-to-item-container grid-item">
+        <DatePicker
+          label="Select time"
+          value={value}
+          onChange={(newValue) => {
+            setValue(newValue);
+          }}
+          renderInput={(params) => <TextField {...params} />
+        }
+        />
+      </div>
     </LocalizationProvider>
   );
 }
