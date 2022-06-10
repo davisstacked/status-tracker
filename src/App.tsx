@@ -1,11 +1,13 @@
 import StatusTracker from './statusTracker/StatusTracker';
+
 import './App.css';
+
 
 
 function App() {
   return (
     <div className="App">
-      <StatusTracker />
+        <StatusTracker />
     </div>
   );
 }

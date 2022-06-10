@@ -40,7 +40,9 @@ const StatusPopper = () => {
           anchorEl={anchorEl}
         >
           <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
-            The content of the Popper.
+            <div className="Status-Popper">
+              <form action=""></form>
+            </div>
           </Box>
         </Popper>
       </div>
