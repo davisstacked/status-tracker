@@ -29,19 +29,3 @@ const StatusTrackerPage = () => {
 }
 
 export default StatusTrackerPage;
-
-     {/* <div className="first-row">
-          <div className="Status-Tracker-grid-item-1">Status:</div>
-        <div className="popper-row">
-          <StatusPopper />
-          <RouteToPopper />
-        </div>
-        </div>
-        <div className="other-row">
-          <div>Reviewed By:</div>
-          <div className="bold">@Mike Poland</div>
-        </div>
-        <div className="other-row">
-          <div>Currently With:</div>
-          <div className="bold">@Helder Melendez</div>
-        </div> */}

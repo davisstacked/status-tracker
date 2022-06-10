@@ -5,6 +5,7 @@ import {
   Popper,
   ClickAwayListener
 } from '@mui/material';
+import SyncIcon from '@mui/icons-material/Sync';
 
 import './StatusTracker.css';
 
@@ -27,9 +28,10 @@ const StatusPopper = () => {
       <ClickAwayListener onClickAway={handleClickAway}>
       <div className="status-button-container">
         <button 
-          className="status-button" 
+          className="progress-button" 
           onClick={handleClick}>
-            In Progress
+            <div><SyncIcon sx={{fontSize: "12px"}} /></div>
+            <div>In Progress</div>
         </button>
         <Popper 
           placement="bottom-start" 

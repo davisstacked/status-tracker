@@ -5,6 +5,7 @@ import {
   Popper,
   ClickAwayListener
 } from '@mui/material';
+import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 
 import './StatusTracker.css';
 
@@ -27,8 +28,11 @@ const RouteToPopper = () => {
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
       <div>
-        <button className="route-to-button" onClick={handleClick}>
-          <div>Route To</div>
+        <button className="route-to-button status-button-container" onClick={handleClick}>
+        {/* <div className="status-button-container"> */}
+              <div><SendOutlinedIcon sx={{fontSize: "12px"}} /></div>
+              <div>Route To</div>
+            {/* </div> */}
         </button>
         <Popper placement="bottom-start" id={id} open={open} anchorEl={anchorEl}>
           <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
