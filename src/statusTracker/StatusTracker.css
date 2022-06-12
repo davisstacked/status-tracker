@@ -97,6 +97,20 @@
     font-family: Prelo;
 }
 
+.MuiInputLabel-root {
+    font-family: Prelo;
+    font-size: 16px;
+}
+
+#\:r1\: {
+    font-family: Prelo;
+    font-size: 16px;
+}
+
+.datePicker {
+    font-family: Prelo;
+    font-size: 16px;
+}
 .custom-select {
     position: relative;
     font-family: Prelo;

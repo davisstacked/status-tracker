@@ -10,28 +10,41 @@ import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import './StatusTracker.css';
 
 const RouteToPopperForm = () => {
+// For all of state
+  const [RouteTos, setRouteTos] = useState([]);
 
-  const [comments, setComments] = useState([]);
-  const [comment, setComment] = useState({ message: '' });
+  const [routeTo, setRouteTo] = useState<any>({ 
+    dueDate: '',
+    comment: '',
+    routeTo: '',
+  });
 
-  const addComment = (comment: any) => {
+  const addRouteTo = (routeTo: any) => {
     // const newComment = {
     //   ...comment,
     //   id: uuid(),
     //   time: moment().format(),
     // };
-    // setComments((state) => [...state, newComment]);
+    // setRouteTos((state) => [...state, newRouteTo]);
   };
 
   const handleSubmit = (e: any) => {
-    e.preventDefault();
-    addComment(comment);
-    setComment({ message: '' });
+    // e.preventDefault();
+    // addComment(comment);
+    setRouteTo({ 
+      dueDate: '',
+      routeTo: '',
+      comment: '' 
+    });
   };
 
   const handleChange = (e: any) => {
-    setComment((state) => ({ ...state, [e.target.name]: e.target.value }));
+    setRouteTo((state: any) => ({ ...state, [e.target.name]: e.target.value }));
   };
+
+  const handleDateChange = (newValue) => {
+    setRouteTo((state: any) => ({ ...state, newValue}))
+  }
 
   return (
     <div className="Route-To-Popper">
@@ -39,18 +52,23 @@ const RouteToPopperForm = () => {
       <div className="Route-To-Popper-Grid">
         <div className="route-grid-item">Due Date:</div>
         <div className="route-to-item-container">
-          <Calendar />
+          <Calendar 
+            // setRouteTo={setRouteTo} 
+            // routeTo={routeTo}
+            // handleDateChange={handleDateChange}
+          />
         </div>
         <div className="route-grid-item">
-          <label htmlFor="route-to">Route To:</label>
+          <label htmlFor="routeTo">Route To:</label>
         </div>
         <div className="route-grid-item route-to-item-container">
           <div className="custom-select">
-            <select className="route-select-dropdown route-to-item-container" id="route-to" name="route">
+            <select className="route-select-dropdown route-to-item-container" id="routeTo" name="routeTo">
               <option value="Finalized">Finalized</option>
               <option value="IT Group">IT Group</option>
               <option value="Helder Mendez">Helder Melendez</option>
               <option value="Michael Polan">Michael Polan</option>
+              <option value="Leah Davis">Leah Davis</option>
             </select>
           </div>
         </div>
@@ -61,8 +79,8 @@ const RouteToPopperForm = () => {
             className="textarea"
             placeholder='Textarea placeholder'
             onChange={handleChange}
-            name='message'
-            value={comment.message}
+            name='comment'
+            value={routeTo.comment}
         />
       </div>
       <div className="route-to-button-container">
