@@ -136,6 +136,13 @@
     border-radius: 2px;
 }
 
+.route-select-dropdown:focus {
+
+    outline: none !important;
+    border:2px solid #1976d2;
+    /* box-shadow: 0 0 10px #719ECE; */
+}
+
 .route-grid-item {
     display: flex;
     width: stretch; 
@@ -150,6 +157,12 @@
     width: 28.7rem;
     height: 13.9rem;
     border: 1px solid #D9D9D9;
+}
+
+.textarea:focus {
+    outline: none !important;
+    border:1px solid #1976d2;
+    /* box-shadow: 0 0 10px #719ECE; */
 }
 
 /* ************************ Status Popper **************************** */

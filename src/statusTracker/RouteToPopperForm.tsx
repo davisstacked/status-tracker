@@ -19,6 +19,7 @@ const RouteToPopperForm = () => {
     routeTo: '',
   });
 
+  console.log("routeTo", routeTo);
   const addRouteTo = (routeTo: any) => {
     // const newComment = {
     //   ...comment,
@@ -42,10 +43,6 @@ const RouteToPopperForm = () => {
     setRouteTo((state: any) => ({ ...state, [e.target.name]: e.target.value }));
   };
 
-  const handleDateChange = (newValue) => {
-    setRouteTo((state: any) => ({ ...state, newValue}))
-  }
-
   return (
     <div className="Route-To-Popper">
     <form className="Route-To-Popper-Form">
@@ -53,8 +50,8 @@ const RouteToPopperForm = () => {
         <div className="route-grid-item">Due Date:</div>
         <div className="route-to-item-container">
           <Calendar 
-            // setRouteTo={setRouteTo} 
-            // routeTo={routeTo}
+            setRouteTo={setRouteTo} 
+            routeTo={routeTo}
             // handleDateChange={handleDateChange}
           />
         </div>
@@ -63,7 +60,7 @@ const RouteToPopperForm = () => {
         </div>
         <div className="route-grid-item route-to-item-container">
           <div className="custom-select">
-            <select className="route-select-dropdown route-to-item-container" id="routeTo" name="routeTo">
+            <select onChange={handleChange} className="route-select-dropdown route-to-item-container" id="routeTo" name="routeTo">
               <option value="Finalized">Finalized</option>
               <option value="IT Group">IT Group</option>
               <option value="Helder Mendez">Helder Melendez</option>

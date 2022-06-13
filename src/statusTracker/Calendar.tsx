@@ -5,18 +5,23 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 
-export default function Calendar() {
+export default function Calendar({setRouteTo, routeTo}) {
 
 //you can access the value field in handleChange by e.target.value
 
-const [value, setValue] = React.useState<Date | null>(null
-);
+const date = new Date();
+// add two days
+const initialDueDate = date.setDate(date.getDate() + 2);
+
+const dueDate = new Date(initialDueDate);
+
+const [value, setValue] = React.useState<any>(dueDate);
+// const [selectedDate, handleDateChange] = useState(new Date());
 
 // handleChange(value, e) {
 //     console.log(value); // this will be a moment date object
 //     console.log(e.target.value); // this will be a string value in datepicker input field
 // }
-
 
 console.log('value', value)
   return (
@@ -27,8 +32,9 @@ console.log('value', value)
           value={value}
           onChange={(newValue) => {
             setValue(newValue);
+            setRouteTo((state) => ({...state, dueDate: value}))
           }}
-          renderInput={(params) => <TextField {...params} />
+          renderInput={(params) => <TextField size="small" sx={{fontFamily: "Prelo"}} {...params} />
         }
         />
       </div>
