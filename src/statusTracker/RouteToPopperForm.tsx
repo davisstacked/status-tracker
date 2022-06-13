@@ -24,7 +24,7 @@ const dueDate = new Date(initialDueDate);
     dueDate: dueDate,
     comment: '',
     routeTo: 'Finalized',
-    user: 'Helder Melendez'
+    user: user.currentlyWith
   });
 
   console.log("routeTo", routeTo);
@@ -45,8 +45,10 @@ const dueDate = new Date(initialDueDate);
       dueDate: dueDate,
       routeTo: 'Finalized',
       comment: '',
-      user: routeTo.routeTo
+      user: user.currentlyWith
     });
+    // console.log(routeTo);
+    console.log(user);
     handleClickAway();
   };
 
@@ -74,7 +76,7 @@ const dueDate = new Date(initialDueDate);
             <select onChange={handleChange} className="route-select-dropdown route-to-item-container" id="routeTo" name="routeTo">
               <option className="select-items" value="Finalized">Finalized</option>
               <option className="select-items" value="IT Group">IT Group</option>
-              <option className="select-items" value="Helder Mendez">Helder Melendez</option>
+              <option className="select-items" value="Helder Melendez">Helder Melendez</option>
               <option className="select-items" value="Michael Polan">Michael Polan</option>
               <option className="select-items" value="Leah Davis">Leah Davis</option>
             </select>
@@ -101,7 +103,7 @@ const dueDate = new Date(initialDueDate);
           Approve
         </div>
         </button>
-        <button className="route-to-buttons reject-button" type='submit'>
+        <button onClick={handleSubmit} className="route-to-buttons reject-button" type='submit'>
             <div>
                 <ThumbDownOffAltIcon />
             </div>
@@ -109,7 +111,7 @@ const dueDate = new Date(initialDueDate);
                 Reject
             </div>
         </button>
-        <button className="route-to-buttons inquire-button" type='submit'>
+        <button onClick={handleSubmit} className="route-to-buttons inquire-button" type='submit'>
             <div>
                 <QuestionMarkIcon />
             </div>
