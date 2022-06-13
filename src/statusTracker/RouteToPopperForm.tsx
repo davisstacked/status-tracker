@@ -9,14 +9,22 @@ import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
 import './StatusTracker.css';
 
-const RouteToPopperForm = () => {
+const RouteToPopperForm = ({user, setUser, setAnchorEl, handleClickAway}) => {
 // For all of state
+
+const date = new Date();
+// add two days
+const initialDueDate = date.setDate(date.getDate() + 2);
+
+const dueDate = new Date(initialDueDate);
+
   const [RouteTos, setRouteTos] = useState([]);
 
   const [routeTo, setRouteTo] = useState<any>({ 
-    dueDate: '',
+    dueDate: dueDate,
     comment: '',
-    routeTo: '',
+    routeTo: 'Finalized',
+    user: 'Helder Melendez'
   });
 
   console.log("routeTo", routeTo);
@@ -30,13 +38,16 @@ const RouteToPopperForm = () => {
   };
 
   const handleSubmit = (e: any) => {
-    // e.preventDefault();
+    e.preventDefault();
     // addComment(comment);
+    setUser((state) => ({...state, reviewedBy: routeTo.user, currentlyWith: routeTo.routeTo}))
     setRouteTo({ 
-      dueDate: '',
-      routeTo: '',
-      comment: '' 
+      dueDate: dueDate,
+      routeTo: 'Finalized',
+      comment: '',
+      user: routeTo.routeTo
     });
+    handleClickAway();
   };
 
   const handleChange = (e: any) => {
@@ -61,12 +72,13 @@ const RouteToPopperForm = () => {
         <div className="route-grid-item route-to-item-container">
           <div className="custom-select">
             <select onChange={handleChange} className="route-select-dropdown route-to-item-container" id="routeTo" name="routeTo">
-              <option value="Finalized">Finalized</option>
-              <option value="IT Group">IT Group</option>
-              <option value="Helder Mendez">Helder Melendez</option>
-              <option value="Michael Polan">Michael Polan</option>
-              <option value="Leah Davis">Leah Davis</option>
+              <option className="select-items" value="Finalized">Finalized</option>
+              <option className="select-items" value="IT Group">IT Group</option>
+              <option className="select-items" value="Helder Mendez">Helder Melendez</option>
+              <option className="select-items" value="Michael Polan">Michael Polan</option>
+              <option className="select-items" value="Leah Davis">Leah Davis</option>
             </select>
+
           </div>
         </div>
       </div>
@@ -81,7 +93,7 @@ const RouteToPopperForm = () => {
         />
       </div>
       <div className="route-to-button-container">
-      <button className="route-to-buttons approve-button" type='submit'>
+      <button onClick={handleSubmit} className="route-to-buttons approve-button" type='submit'>
         <div>
             <ThumbUpOffAltIcon />
         </div>

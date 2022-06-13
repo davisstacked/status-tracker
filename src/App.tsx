@@ -1,4 +1,4 @@
-import StatusTracker from './statusTracker/StatusTracker';
+import StatusTracker from './statusTracker/StatusTrackerPage';
 
 import './App.css';
 

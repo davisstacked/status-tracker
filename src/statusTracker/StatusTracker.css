@@ -8,6 +8,15 @@
     src: url(../Prelo-Black.ttf);
   }
 
+.App {
+    background-color: teal;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding-top: 16.5rem;
+}
+
 .Status-Tracker {
     width: 34.1rem;
     font-family: Prelo;
@@ -18,7 +27,6 @@
     background-color: #FFFFFF;
     box-shadow: 0px 3px 6px -4px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
-    margin-top: 16.5rem;
 }
 
 .Status-Tracker-container {
@@ -97,20 +105,11 @@
     font-family: Prelo;
 }
 
-.MuiInputLabel-root {
-    font-family: Prelo;
-    font-size: 16px;
-}
-
 #\:r1\: {
     font-family: Prelo;
-    font-size: 16px;
+    font-size: 14px;
 }
 
-.datePicker {
-    font-family: Prelo;
-    font-size: 16px;
-}
 .custom-select {
     position: relative;
     font-family: Prelo;
@@ -118,10 +117,6 @@
     height: 3.2rem;
     color: #262626;
 }
-
-.select-selected {
-    background-color: DodgerBlue;
-  }
 
 .route-select-dropdown {
     width: stretch;
@@ -133,13 +128,13 @@
     padding: .5rem 1rem .5rem 1.2rem;
     color: #262626;
     border: 1px solid #D9D9D9;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 .route-select-dropdown:focus {
 
     outline: none !important;
-    border:2px solid #1976d2;
+    border:2px solid #2e7d32;
     /* box-shadow: 0 0 10px #719ECE; */
 }
 
@@ -156,12 +151,14 @@
     margin-bottom: 1rem;
     width: 28.7rem;
     height: 13.9rem;
+    border-radius: 4px;
     border: 1px solid #D9D9D9;
 }
 
 .textarea:focus {
     outline: none !important;
-    border:1px solid #1976d2;
+    border:2px solid #2e7d32;
+    border-radius: 4px;
     /* box-shadow: 0 0 10px #719ECE; */
 }
 
@@ -305,6 +302,10 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.route-to-buttons:hover {
+    border: 2px solid;
 }
 
 .route-to-buttons {

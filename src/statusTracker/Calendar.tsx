@@ -28,13 +28,13 @@ console.log('value', value)
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <div className="Rout-to-item-container grid-item">
         <DatePicker
-          label="Select time"
+         
           value={value}
           onChange={(newValue) => {
             setValue(newValue);
             setRouteTo((state) => ({...state, dueDate: value}))
           }}
-          renderInput={(params) => <TextField size="small" sx={{fontFamily: "Prelo"}} {...params} />
+          renderInput={(params) => <TextField color="success" size="small" sx={{fontFamily: "Prelo", fontSize: "14px"}} {...params} />
         }
         />
       </div>
