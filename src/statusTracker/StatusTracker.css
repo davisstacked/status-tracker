@@ -139,7 +139,7 @@
 .route-select-dropdown:focus {
 
     outline: none !important;
-    border:2px solid #2e7d32;
+    border:2px solid #1976d2;
     /* box-shadow: 0 0 10px #719ECE; */
 }
 
@@ -161,12 +161,12 @@
 }
 
 .text:focus {
-    border-color: black !important;
+    border-color: #1976d2 !important;
 }
 
 .textarea:focus {
     outline: none !important;
-    border:2px solid black;
+    border:2px solid #1976d2;
     border-radius: 4px;
     /* box-shadow: 0 0 10px #719ECE; */
 }
