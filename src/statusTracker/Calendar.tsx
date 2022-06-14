@@ -16,12 +16,6 @@ const initialDueDate = date.setDate(date.getDate() + 2);
 const dueDate = new Date(initialDueDate);
 
 const [value, setValue] = React.useState<any>(dueDate);
-// const [selectedDate, handleDateChange] = useState(new Date());
-
-// handleChange(value, e) {
-//     console.log(value); // this will be a moment date object
-//     console.log(e.target.value); // this will be a string value in datepicker input field
-// }
 
 console.log('value', value)
   return (
@@ -31,7 +25,7 @@ console.log('value', value)
           value={value}
           onChange={(newValue) => {
             setValue(newValue);
-            setRouteTo((state) => ({...state, dueDate: value}))
+            setRouteTo((state) => ({...state, dueDate: newValue}))
           }}
           renderInput={(params) => <TextField className="text" size="small" sx={{fontFamily: "Prelo", fontSize: "14px"}} {...params} />
         }

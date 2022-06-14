@@ -40,7 +40,6 @@ const RouteToPopper = ({user, setUser}) => {
             <RouteToPopperForm 
                user={user}
                setUser={setUser}
-               setAnchorEl={setAnchorEl} 
                handleClickAway={handleClickAway}
             />
           </Box>

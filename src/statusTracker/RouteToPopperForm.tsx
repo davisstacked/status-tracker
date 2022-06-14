@@ -9,7 +9,7 @@ import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
 import './StatusTracker.css';
 
-const RouteToPopperForm = ({user, setUser, setAnchorEl, handleClickAway}) => {
+const RouteToPopperForm = ({user, setUser, handleClickAway}) => {
 // For all of state
 
 const date = new Date();
@@ -28,13 +28,13 @@ const dueDate = new Date(initialDueDate);
   });
 
   console.log("routeTo", routeTo);
-  const addRouteTo = (routeTo: any) => {
+  const addRouteTo = (routedTo: any) => {
     // const newComment = {
     //   ...comment,
     //   id: uuid(),
     //   time: moment().format(),
     // };
-    // setRouteTos((state) => [...state, newRouteTo]);
+    setRouteTos((state) => [...state, routedTo]);
   };
 
   const handleSubmit = (e: any) => {
