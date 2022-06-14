@@ -16,16 +16,18 @@
     display: flex;
     justify-content: center;
     padding-top: 12rem;
+    /* position: fixed; */
+    position: relative;
     background-position: center;
 }
 
 .Status-Tracker {
-    width: 42.5rem;
+    width: 41rem;
     font-family: Prelo;
     display:flex;
     position: absolute;
     top: 11.8rem;
-    right: 58rem;
+    right: 73rem;
     justify-content: center;
     align-items: center;
     height: 12.4rem;
@@ -158,9 +160,13 @@
     border: 1px solid #D9D9D9;
 }
 
+.text:focus {
+    border-color: black !important;
+}
+
 .textarea:focus {
     outline: none !important;
-    border:2px solid #2e7d32;
+    border:2px solid black;
     border-radius: 4px;
     /* box-shadow: 0 0 10px #719ECE; */
 }
