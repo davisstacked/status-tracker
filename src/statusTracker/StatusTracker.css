@@ -9,24 +9,27 @@
   }
 
 .App {
-    background-color: teal;
+    background-image: url("../../public/iMac\ -\ 1.png");
+    background-repeat: no-repeat;
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
-    padding-top: 16.5rem;
+    padding-top: 12rem;
+    background-position: center;
 }
 
 .Status-Tracker {
-    width: 34.1rem;
+    width: 42.5rem;
     font-family: Prelo;
     display:flex;
+    position: absolute;
+    top: 11.8rem;
+    right: 58rem;
     justify-content: center;
     align-items: center;
-    height: 14.4rem;
+    height: 12.4rem;
     background-color: #FFFFFF;
-    box-shadow: 0px 3px 6px -4px rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
 }
 
 .Status-Tracker-container {
