@@ -6,16 +6,20 @@ import {
   Button,
   ClickAwayListener
 } from '@mui/material';
+import { statusArray } from './StatusArray';
 
 import './StatusTracker.css';
 
 const StatusTrackerPage = () => {
 
   const [user, setUser] = useState<any>({
-    reviewedBy: "Mike Poland",
-    currentlyWith: "Helder Melendez"
-  }
-)
+      reviewedBy: "Mike Poland",
+      currentlyWith: "Helder Melendez"
+  });
+
+  const [statuses, setStatuses] = useState<any>([...statusArray])
+
+  console.log('statuses', statuses)
 
   return (
 
@@ -23,7 +27,10 @@ const StatusTrackerPage = () => {
       <div className="Status-Tracker-container">
         <div className="grid-item">Status:</div>
         <div className="popper-row grid-item">
-          <StatusPopper />
+          <StatusPopper 
+            statuses={statuses}
+            setStatuses={setStatuses}
+          />
           <RouteToPopper 
             user={user}
             setUser={setUser}

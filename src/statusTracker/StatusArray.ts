@@ -1,4 +1,4 @@
-export const statuses = [
+export const statusArray = [
     { 
         "user": "Helder Melendez",
         "dueDate": "04/11/2022 - 5:00 PM",

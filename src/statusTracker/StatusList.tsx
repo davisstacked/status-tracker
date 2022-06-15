@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
 import Status from './Status';
 
-import './Status.css'
+import './StatusTracker.css';
 
-const StatusList = () => {
+const StatusList = ({statuses, setStatuses}) => {
 
-    const [statuses, setStatuses] = useState<any>();
   const renderStatuses = () => {
     return (
       <ul>
         <li className='Status-list' style={{ listStyleType: 'none' }}>
           {statuses.map((status) => (
             <Status
-            //   className='single-Status'
-            //   user={status.user}
-            //   message={status.message}
-            //   time={status.time}
-            //   image={status.image}
-            //   key={status.id}
-            //   id={status.id}
+            statuses={statuses}
+            setStatuses={setStatuses}
+            user={status.user}
+            dueDate={status.dueDate}
+            routedTo={status.routedTo}
+            comment={status.comment}
+            status={status.status}
             />
           ))}
         </li>
