@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Status from './Status';
+import SyncIcon from '@mui/icons-material/Sync';
 
 import './StatusTracker.css';
 
@@ -14,6 +15,7 @@ const StatusList = ({ statuses, setStatuses, handleClick, user, setUser, routeTo
           className="review-status-grid-item review-status-buttons doingbutton2"
           type='submit'
         >
+            <div><SyncIcon  /></div>
             <div>
               Doing
             </div>
@@ -23,6 +25,8 @@ const StatusList = ({ statuses, setStatuses, handleClick, user, setUser, routeTo
       </div>
           {statuses.map((status) => (
               <Status
+                reviewedBy={status.reviewedBy}
+                timeSubmitted={status.timeSubmitted}
                 statuses={statuses}
                 setStatuses={setStatuses}
                 user={status.user}

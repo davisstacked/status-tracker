@@ -28,10 +28,12 @@ const StatusTrackerPage = () => {
 
   const [routeTo, setRouteTo] = useState<any>({ 
     user: user.currentlyWith,
-    dueDate: dueDate,
+    reviewedBy: user.reviewedBy,
+    dueDate: '04/11/2022 - 5:00 PM',
     routedTo: 'Finalized',
     comment: '',
-    status: 'Doing'
+    status: '',
+    timeSubmitted: ''
   });
 
   console.log('statuses', statuses)

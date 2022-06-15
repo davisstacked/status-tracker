@@ -10,7 +10,9 @@ import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import './StatusTracker.css';
 
 const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, setStatuses, dueDate, routeTo, setRouteTo }) => {
-// For all of state
+
+  // timeSubmitted will be added to state on submit
+  // 
 
   const addStatus = (routeTo: any) => {
     setStatuses((state) => [{ ...routeTo}, ...state]);
@@ -19,10 +21,11 @@ const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, setStatus
   const handleSubmit = (e: any) => {
     e.preventDefault();
     // addComment(comment);
-    setUser((state) => ({...state, reviewedBy: routeTo.user, currentlyWith: routeTo.routedTo}));
+    setUser((state) => ({...state, reviewedBy: routeTo.reviewedBy, currentlyWith: routeTo.routedTo}));
 
     setRouteTo({ 
       user: user.currentlyWith,
+      reviewedBy: user.reviewedBy,
       dueDate: dueDate,
       routedTo: 'Finalized',
       comment: '',

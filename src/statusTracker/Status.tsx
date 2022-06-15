@@ -9,7 +9,7 @@ import classNames from 'classnames';
 
 import './StatusTracker.css';
 
-const Status = ({ statuses, setStatuses, user, dueDate, routedTo, comment, status, handleClick }) => {
+const Status = ({ statuses, setStatuses, user, dueDate, timeSubmitted, reviewedBy, routedTo, comment, status, handleClick }) => {
 
   const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
     <Tooltip {...props} arrow classes={{ popper: className }} />
@@ -62,8 +62,8 @@ const Status = ({ statuses, setStatuses, user, dueDate, routedTo, comment, statu
             </div>
         </button>
       </BootstrapTooltip>
-      <div>{user}</div>
-      <div className="twelvepx">{dueDate}</div>
+      <div>{reviewedBy}</div>
+      <div className="twelvepx">{timeSubmitted}</div>
    </div>
   )
 }
