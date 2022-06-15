@@ -58,11 +58,13 @@ const StatusPopper = ({statuses, setStatuses}) => {
                   </button>             
                 </div> 
                 <div>Review Status: </div>
+                {/* <div className="review-status-grid"> */}
                 <StatusList 
                   statuses={statuses}
                   setStatuses={setStatuses}
                   handleClick={handleClick}
                 />
+                {/* </div> */}
               </div>
             </div>
           </Box>

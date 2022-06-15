@@ -51,7 +51,7 @@ const Status = ({ statuses, setStatuses, user, dueDate, routedTo, comment, statu
   }
 
   return (        
-    <div>    
+    <div className="review-status-grid-item">    
     {/* <button 
       className="doing-button-2 review-status-grid-item review-status-buttons" 
       onClick={handleClick}

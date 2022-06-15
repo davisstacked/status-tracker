@@ -183,6 +183,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    /* overflow: scroll; */
 }
 
 .status-popper-container {
@@ -208,11 +209,13 @@
 }
 
 .review-status-grid {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-size: 1.4rem;
     row-gap: 1.2rem;
     margin-top: 1.25rem;
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
 }
 
 .review-status-buttons {
@@ -261,7 +264,7 @@
 
 .review-status-grid-item {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
