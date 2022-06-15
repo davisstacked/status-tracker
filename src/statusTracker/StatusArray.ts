@@ -10,14 +10,14 @@ export const statusArray = [
         "user": "Jaya Chigurupati",
         "dueDate": "04/10/2022 - 2:24 PM",
         "routedTo": "Helder Melendez",
-        "comment": "Good work, agent Davis!",
+        "comment": "How did you do such an exceptional job on this?",
         "status": "Inquire"
     },
     {
         "user": "Nasar Abbas",
         "dueDate": "04/03/2022 - 2:11 PM",
         "routedTo": "Jaya Chigurupati",
-        "comment": "Please split up into separate files",
+        "comment": "I'm threatened by how talented you are.",
         "status": "Reject"
     },
     {

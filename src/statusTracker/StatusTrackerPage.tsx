@@ -12,12 +12,27 @@ import './StatusTracker.css';
 
 const StatusTrackerPage = () => {
 
+  // Date + Two Days on form open
+  const date = new Date();
+  // add two days
+  const initialDueDate = date.setDate(date.getDate() + 2);
+  
+  const dueDate = new Date(initialDueDate);
+
   const [user, setUser] = useState<any>({
       reviewedBy: "Mike Poland",
       currentlyWith: "Helder Melendez"
   });
 
   const [statuses, setStatuses] = useState<any>([...statusArray])
+
+  const [routeTo, setRouteTo] = useState<any>({ 
+    user: user.currentlyWith,
+    dueDate: dueDate,
+    routedTo: 'Finalized',
+    comment: '',
+    status: 'Doing'
+  });
 
   console.log('statuses', statuses)
 
@@ -30,10 +45,19 @@ const StatusTrackerPage = () => {
           <StatusPopper 
             statuses={statuses}
             setStatuses={setStatuses}
-          />
-          <RouteToPopper 
             user={user}
             setUser={setUser}
+            routeTo={routeTo}
+            setRouteTo={setRouteTo}
+          />
+          <RouteToPopper 
+            dueDate={dueDate}
+            user={user}
+            setUser={setUser}
+            statuses={statuses}
+            setStatuses={setStatuses}
+            routeTo={routeTo}
+            setRouteTo={setRouteTo}
           />
         </div>
         <div className="grid-item">Reviewed By:</div>

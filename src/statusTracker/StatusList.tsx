@@ -3,21 +3,34 @@ import Status from './Status';
 
 import './StatusTracker.css';
 
-const StatusList = ({ statuses, setStatuses, handleClick }) => {
+const StatusList = ({ statuses, setStatuses, handleClick, user, setUser, routeTo, setRouteTo }) => {
 
   const renderStatuses = () => {
     return (
       <div className="review-status-grid">
+        {/* The doing button line */}
+        <div className="review-status-grid-item">    
+        <button 
+          className="review-status-grid-item review-status-buttons doingbutton2"
+          type='submit'
+        >
+            <div>
+              Doing
+            </div>
+        </button>
+      <div>{user.currentlyWith}</div>
+      <div className="twelvepx">{routeTo.dueDate}</div>
+      </div>
           {statuses.map((status) => (
               <Status
-              statuses={statuses}
-              setStatuses={setStatuses}
-              user={status.user}
-              dueDate={status.dueDate}
-              routedTo={status.routedTo}
-              comment={status.comment}
-              status={status.status}
-              handleClick={handleClick}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                user={status.user}
+                dueDate={status.dueDate}
+                routedTo={status.routedTo}
+                comment={status.comment}
+                status={status.status}
+                handleClick={handleClick}
               />
             ))}
       </div>

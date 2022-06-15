@@ -9,43 +9,23 @@ import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
 import './StatusTracker.css';
 
-const RouteToPopperForm = ({user, setUser, handleClickAway}) => {
+const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, setStatuses, dueDate, routeTo, setRouteTo }) => {
 // For all of state
 
-const date = new Date();
-// add two days
-const initialDueDate = date.setDate(date.getDate() + 2);
-
-const dueDate = new Date(initialDueDate);
-
-  const [RouteTos, setRouteTos] = useState([]);
-
-  const [routeTo, setRouteTo] = useState<any>({ 
-    dueDate: dueDate,
-    comment: '',
-    routeTo: 'Finalized',
-    user: user.currentlyWith
-  });
-
-  console.log("routeTo", routeTo);
-  const addRouteTo = (routedTo: any) => {
-    // const newComment = {
-    //   ...comment,
-    //   id: uuid(),
-    //   time: moment().format(),
-    // };
-    setRouteTos((state) => [...state, routedTo]);
+  const addStatus = (routeTo: any) => {
+    setStatuses((state) => [{ ...routeTo}, ...state]);
   };
-
+  
   const handleSubmit = (e: any) => {
     e.preventDefault();
     // addComment(comment);
-    setUser((state) => ({...state, reviewedBy: routeTo.user, currentlyWith: routeTo.routeTo}))
+    setUser((state) => ({...state, reviewedBy: routeTo.user, currentlyWith: routeTo.routedTo}));
+
     setRouteTo({ 
+      user: user.currentlyWith,
       dueDate: dueDate,
-      routeTo: 'Finalized',
+      routedTo: 'Finalized',
       comment: '',
-      user: user.currentlyWith
     });
     // console.log(routeTo);
     console.log(user);

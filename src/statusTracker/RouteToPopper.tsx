@@ -12,7 +12,7 @@ import RouteToPopperForm from './RouteToPopperForm';
 
 import './StatusTracker.css';
 
-const RouteToPopper = ({user, setUser}) => {
+const RouteToPopper = ({ user, setUser, statuses, setStatuses, dueDate, routeTo, setRouteTo }) => {
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -37,10 +37,15 @@ const RouteToPopper = ({user, setUser}) => {
         </button>
         <Popper placement="bottom-start" id={id} open={open} anchorEl={anchorEl}>
           <Box>
-            <RouteToPopperForm 
-               user={user}
-               setUser={setUser}
-               handleClickAway={handleClickAway}
+            <RouteToPopperForm
+              routeTo={routeTo}
+              setRouteTo={setRouteTo}
+              dueDate={dueDate}
+              user={user}
+              setUser={setUser}
+              handleClickAway={handleClickAway}
+              statuses={statuses}
+              setStatuses={setStatuses}
             />
           </Box>
         </Popper>

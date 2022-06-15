@@ -15,7 +15,8 @@ import StatusList from './StatusList';
 
 import './StatusTracker.css';
 
-const StatusPopper = ({statuses, setStatuses}) => {
+const StatusPopper = ({ statuses, setStatuses, user, setUser, routeTo, setRouteTo }) => {
+
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -60,6 +61,10 @@ const StatusPopper = ({statuses, setStatuses}) => {
                 <div>Review Status: </div>
                 {/* <div className="review-status-grid"> */}
                 <StatusList 
+                  routeTo={routeTo}
+                  setRouteTo={setRouteTo}
+                  user={user}
+                  setUser={setUser}
                   statuses={statuses}
                   setStatuses={setStatuses}
                   handleClick={handleClick}
