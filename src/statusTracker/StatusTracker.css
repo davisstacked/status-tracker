@@ -229,22 +229,22 @@
 
  /*buttons for status popper */
 
- .approve-button-2 {
+ .approvebutton2 {
     color: #3F9C35;
     /* width: 10.4rem; */
  }
 
- .reject-button-2 {
+ .rejectbutton2 {
     color: #E40046;
     /* width: 9.2rem; */
  }
 
- .inquire-button-2 {
+ .inquirebutton2 {
     color: #63666A;
     /* width: 8.9rem; */
  }
 
- .doing-button-2 {
+ .doingbutton2 {
     background-color: #E6F7FF;
     color: #1890FF;
     border: 1px solid #91D5FF;

@@ -11,21 +11,21 @@ export const statusArray = [
         "dueDate": "04/10/2022 - 2:24 PM",
         "routedTo": "Helder Melendez",
         "comment": "Good work, agent Davis!",
-        "status": "Accepted"
+        "status": "Inquire"
     },
     {
         "user": "Nasar Abbas",
         "dueDate": "04/03/2022 - 2:11 PM",
         "routedTo": "Jaya Chigurupati",
         "comment": "Please split up into separate files",
-        "status": "Rejected"
+        "status": "Reject"
     },
     {
         "user": "Mike Poland",
         "dueDate": "04/01/2022 - 5:00 PM",
         "routedTo": "Nasar Abbas",
         "comment": "Good work, agent Davis!",
-        "status": "Accepted"
+        "status": "Approve"
     }
 ]
 

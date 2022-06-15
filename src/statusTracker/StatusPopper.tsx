@@ -61,6 +61,7 @@ const StatusPopper = ({statuses, setStatuses}) => {
                 <StatusList 
                   statuses={statuses}
                   setStatuses={setStatuses}
+                  handleClick={handleClick}
                 />
               </div>
             </div>

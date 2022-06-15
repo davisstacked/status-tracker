@@ -3,12 +3,11 @@ import Status from './Status';
 
 import './StatusTracker.css';
 
-const StatusList = ({statuses, setStatuses}) => {
+const StatusList = ({ statuses, setStatuses, handleClick }) => {
 
   const renderStatuses = () => {
     return (
-      <ul>
-        <li className='Status-list' style={{ listStyleType: 'none' }}>
+      <div className="review-status-grid">
           {statuses.map((status) => (
             <Status
             statuses={statuses}
@@ -18,10 +17,10 @@ const StatusList = ({statuses, setStatuses}) => {
             routedTo={status.routedTo}
             comment={status.comment}
             status={status.status}
+            handleClick={handleClick}
             />
           ))}
-        </li>
-      </ul>
+      </div>
     );
   };
 
