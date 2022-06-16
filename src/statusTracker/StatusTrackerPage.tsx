@@ -38,7 +38,7 @@ const StatusTrackerPage = () => {
 
   const addStatus = () => {
     const newStatus = {
-      user: "Leah Davis",
+      user: "Helder Melendez",
       reviewedBy: "Michael Polan",
       dueDate: '04/30/2022 - 4:20 PM',
       routedTo: 'Finalized',
