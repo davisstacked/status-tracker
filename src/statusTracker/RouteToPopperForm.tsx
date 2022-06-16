@@ -9,33 +9,29 @@ import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
 import './StatusTracker.css';
 
-const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, setStatuses, dueDate, routeTo, setRouteTo }) => {
+const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, addStatus, setStatuses, dueDate, routeTo, setRouteTo }) => {
 
   // timeSubmitted will be added to state on submit
   // 
 
   const date = new Date();
 
-  const addStatus = (status: any) => {
-    // const newStatus = {
-    //   ...status,
-    //   timeSubmitted: date
-    // };
-    setStatuses((state) => [{ ...status}, ...state]);
-  };
-
   const handleChange = (e: any) => {
     setRouteTo((state: any) => ({ ...state, [e.target.name]: e.target.value }));
   };
   
-  const handleApprove = (e: any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     // addComment(comment);
-    setUser((state) => ({...state, reviewedBy: routeTo.reviewedBy, currentlyWith: routeTo.routedTo}));
-    setRouteTo((state) => ({...state, status: "Approve"}))
+    // setUser((state) => ({...state, reviewedBy: routeTo.user, currentlyWith: routeTo.routedTo}));
+    // setRouteTo((state) => (
+    //   {...state, 
+    //     status: "Approve", 
+    //     reviewedBy: routeTo.user, 
+    //     user: routeTo.routedTo
+    //   }))
    
-    // setRouteTo((state) => ({...state, status}))
-    // addStatus(routeTo);
+    addStatus();
     // setRouteTo({ 
     //   user: user.currentlyWith,
     //   reviewedBy: user.reviewedBy,
@@ -48,48 +44,49 @@ const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, setStatus
     handleClickAway();
   };
 
-  const handleReject = (e: any) => {
-    e.preventDefault();
-    // addComment(comment);
-    setUser((state) => ({...state, reviewedBy: routeTo.reviewedBy, currentlyWith: routeTo.routedTo}));
-    setRouteTo((state) => ({...state, status: "Reject"}))
+  // const handleReject = (e: any) => {
+  //   e.preventDefault();
+  //   // addComment(comment);
+  //   setUser((state) => ({...state, reviewedBy: routeTo.reviewedBy, currentlyWith: routeTo.routedTo}));
+  //   setRouteTo((state) => ({...state, status: "Reject"}))
    
-    // setRouteTo((state) => ({...state, status}))
-    // addStatus(routeTo);
-    // setRouteTo({ 
-    //   user: user.currentlyWith,
-    //   reviewedBy: user.reviewedBy,
-    //   dueDate: dueDate,
-    //   routedTo: 'Finalized',
-    //   comment: '',
-    //   timeSubmitted: ''
-    // });
+  //   // setRouteTo((state) => ({...state, status}))
+  //   // addStatus(routeTo);
+  //   // setRouteTo({ 
+  //   //   user: user.currentlyWith,
+  //   //   reviewedBy: user.reviewedBy,
+  //   //   dueDate: dueDate,
+  //   //   routedTo: 'Finalized',
+  //   //   comment: '',
+  //   //   timeSubmitted: ''
+  //   // });
     
-    handleClickAway();
-  };
+  //   handleClickAway();
+  // };
 
-  const handleInquire = (e: any) => {
-    e.preventDefault();
-    // addComment(comment);
-    setUser((state) => ({...state, reviewedBy: routeTo.reviewedBy, currentlyWith: routeTo.routedTo}));
-    setRouteTo((state) => ({...state, status: "Inquire"}))
+  // const handleInquire = (e: any) => {
+  //   e.preventDefault();
+  //   // addComment(comment);
+  //   setUser((state) => ({...state, reviewedBy: routeTo.reviewedBy, currentlyWith: routeTo.routedTo}));
+  //   setRouteTo((state) => ({...state, status: "Inquire"}))
    
-    // setRouteTo((state) => ({...state, status}))
-    // addStatus(routeTo);
-    // setRouteTo({ 
-    //   user: user.currentlyWith,
-    //   reviewedBy: user.reviewedBy,
-    //   dueDate: dueDate,
-    //   routedTo: 'Finalized',
-    //   comment: '',
-    //   timeSubmitted: ''
-    // });
+  //   // setRouteTo((state) => ({...state, status}))
+  //   // addStatus(routeTo);
+  //   // setRouteTo({ 
+  //   //   user: user.currentlyWith,
+  //   //   reviewedBy: user.reviewedBy,
+  //   //   dueDate: dueDate,
+  //   //   routedTo: 'Finalized',
+  //   //   comment: '',
+  //   //   timeSubmitted: ''
+  //   // });
     
-    handleClickAway();
-  };
+  //   handleClickAway();
+  // };
   
   console.log('user', user);
   console.log('routeTo', routeTo);
+  console.log('statuses', statuses)
 
   return (
     <div className="Route-To-Popper">
@@ -130,7 +127,7 @@ const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, setStatus
         />
       </div>
       <div className="route-to-button-container">
-      <button onClick={handleApprove} name="status" value="Approve" className="route-to-buttons approve-button" type='submit'>
+      <button onClick={handleSubmit} name="status" value="Approve" className="route-to-buttons approve-button" type='submit'>
         <div>
             <ThumbUpOffAltIcon />
         </div>
@@ -138,7 +135,7 @@ const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, setStatus
           Approve
         </div>
         </button>
-        <button onClick={handleReject} name="status" value="Reject" className="route-to-buttons reject-button" type='submit'>
+        <button onClick={handleSubmit} name="status" value="Reject" className="route-to-buttons reject-button" type='submit'>
             <div>
                 <ThumbDownOffAltIcon />
             </div>
@@ -146,7 +143,7 @@ const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, setStatus
                 Reject
             </div>
         </button>
-        <button onClick={handleInquire} name="status" value="Inquire" className="route-to-buttons inquire-button" type='submit'>
+        <button onClick={handleSubmit} name="status" value="Inquire" className="route-to-buttons inquire-button" type='submit'>
             <div>
                 <QuestionMarkIcon />
             </div>

@@ -20,7 +20,7 @@ const StatusList = ({ statuses, setStatuses, handleClick, user, setUser, routeTo
               Doing
             </div>
         </button>
-      <div>{user.currentlyWith}</div>
+      <div>{routeTo.user}</div>
       <div className="twelvepx">{routeTo.dueDate}</div>
       </div>
           {statuses.map((status) => (

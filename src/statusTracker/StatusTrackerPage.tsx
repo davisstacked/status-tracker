@@ -27,14 +27,27 @@ const StatusTrackerPage = () => {
   const [statuses, setStatuses] = useState<any>([...statusArray])
 
   const [routeTo, setRouteTo] = useState<any>({ 
-    user: user.currentlyWith,
-    reviewedBy: user.reviewedBy,
+    user: "Helder Melendez",
+    reviewedBy: "Michael Polan",
     dueDate: '04/11/2022 - 5:00 PM',
     routedTo: 'Finalized',
     comment: '',
     status: '',
     timeSubmitted: ''
   });
+
+  const addStatus = () => {
+    const newStatus = {
+      user: "Leah Davis",
+      reviewedBy: "Michael Polan",
+      dueDate: '04/30/2022 - 4:20 PM',
+      routedTo: 'Finalized',
+      comment: 'Awesome',
+      status: 'Approve',
+      timeSubmitted: '04/30/2022 - 4:20 PM'
+    };
+    setStatuses((state) => [{ ...newStatus}, ...state]);
+  };
 
   return (
 
@@ -58,12 +71,13 @@ const StatusTrackerPage = () => {
             setStatuses={setStatuses}
             routeTo={routeTo}
             setRouteTo={setRouteTo}
+            addStatus={addStatus}
           />
         </div>
         <div className="grid-item">Reviewed By:</div>
-        <div className="bold grid-item">@{user.reviewedBy}</div>
+        <div className="bold grid-item">@{routeTo.reviewedBy}</div>
         <div className="grid-item">Currently With:</div>
-        <div className="bold grid-item">@{user.currentlyWith}</div>
+        <div className="bold grid-item">@{routeTo.user}</div>
       </div>
     </div>
   

@@ -1,6 +1,6 @@
 export const statusArray = [
     {
-        "reviewedBy": "Jaya Chigurupati",
+        "user": "Jaya Chigurupati",
         "timeSubmitted": "04/10/2022 - 2:24 PM",
         "dueDate": "",
         "routedTo": "Helder Melendez",
@@ -8,7 +8,7 @@ export const statusArray = [
         "status": "Inquire"
     },
     {
-        "reviewedBy": "Nasar Abbas",
+        "user": "Nasar Abbas",
         "timeSubmitted": "04/03/2022 - 2:11 PM",
         "dueDate": "",
         "routedTo": "Jaya Chigurupati",
@@ -17,7 +17,7 @@ export const statusArray = [
 
     },
     {
-        "reviewedBy": "Mike Poland",
+        "user": "Michael Polan",
         "timeSubmitted": "04/01/2022 - 5:00 PM",
         "dueDate": "",
         "routedTo": "Nasar Abbas",
@@ -28,3 +28,4 @@ export const statusArray = [
 
   
 
+// Should be able to do this with just routedTo and user

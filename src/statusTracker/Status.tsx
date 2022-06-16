@@ -62,7 +62,7 @@ const Status = ({ statuses, setStatuses, user, dueDate, timeSubmitted, reviewedB
             </div>
         </button>
       </BootstrapTooltip>
-      <div>{reviewedBy}</div>
+      <div>{user}</div>
       <div className="twelvepx">{timeSubmitted}</div>
    </div>
   )
