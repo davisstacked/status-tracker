@@ -12,6 +12,7 @@ import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import StatusList from './StatusList';
+import classNames from 'classnames';
 
 import './StatusTracker.css';
 
@@ -30,6 +31,19 @@ const StatusPopper = ({ statuses, setStatuses, user, setUser, routeTo, setRouteT
     setAnchorEl(null);
   };
 
+  // conditionally updates the size of the status popper
+  const statusPopperSizing = classNames('status-popper', {
+    oneItem: statuses.length === 4,
+    twoItem: statuses.length === 5,
+    threeItem: statuses.length === 6,
+  });
+
+  const statusPopperContainerSizing = classNames('status-popper-container', {
+    oneItemContainer: statuses.length === 4,
+    twoItemContainer: statuses.length === 5,
+    threeItemContainer: statuses.length === 6,
+  });
+
   return (
       <ClickAwayListener onClickAway={handleClickAway}>
       <div className="status-button-container">
@@ -46,8 +60,8 @@ const StatusPopper = ({ statuses, setStatuses, user, setUser, routeTo, setRouteT
           anchorEl={anchorEl}
         >
           <Box>
-            <div className="status-popper">
-              <div className="status-popper-container">
+            <div className={statusPopperSizing}>
+              <div className={statusPopperContainerSizing}>
                 <div className="current-status-container">
                   <div>Current Status: </div>           
                   <button 

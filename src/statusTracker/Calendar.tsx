@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 // import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 
 export default function Calendar({setRouteTo, routeTo}) {
@@ -20,7 +20,7 @@ const [value, setValue] = React.useState<any>(dueDate);
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <div className="Rout-to-item-container grid-item">
-        <DateTimePicker
+        <DatePicker
           value={value}
           onChange={(newValue) => {
             setValue(newValue);

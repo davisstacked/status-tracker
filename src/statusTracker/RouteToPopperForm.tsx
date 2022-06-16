@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import Calendar from './Calendar';
-import classNames from 'classnames';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
@@ -10,9 +8,6 @@ import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import './StatusTracker.css';
 
 const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, addStatus, setStatuses, dueDate, routeTo, setRouteTo }) => {
-
-  // timeSubmitted will be added to state on submit
-  // 
 
   const date = new Date();
 
@@ -43,46 +38,6 @@ const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, addStatus
     
     handleClickAway();
   };
-
-  // const handleReject = (e: any) => {
-  //   e.preventDefault();
-  //   // addComment(comment);
-  //   setUser((state) => ({...state, reviewedBy: routeTo.reviewedBy, currentlyWith: routeTo.routedTo}));
-  //   setRouteTo((state) => ({...state, status: "Reject"}))
-   
-  //   // setRouteTo((state) => ({...state, status}))
-  //   // addStatus(routeTo);
-  //   // setRouteTo({ 
-  //   //   user: user.currentlyWith,
-  //   //   reviewedBy: user.reviewedBy,
-  //   //   dueDate: dueDate,
-  //   //   routedTo: 'Finalized',
-  //   //   comment: '',
-  //   //   timeSubmitted: ''
-  //   // });
-    
-  //   handleClickAway();
-  // };
-
-  // const handleInquire = (e: any) => {
-  //   e.preventDefault();
-  //   // addComment(comment);
-  //   setUser((state) => ({...state, reviewedBy: routeTo.reviewedBy, currentlyWith: routeTo.routedTo}));
-  //   setRouteTo((state) => ({...state, status: "Inquire"}))
-   
-  //   // setRouteTo((state) => ({...state, status}))
-  //   // addStatus(routeTo);
-  //   // setRouteTo({ 
-  //   //   user: user.currentlyWith,
-  //   //   reviewedBy: user.reviewedBy,
-  //   //   dueDate: dueDate,
-  //   //   routedTo: 'Finalized',
-  //   //   comment: '',
-  //   //   timeSubmitted: ''
-  //   // });
-    
-  //   handleClickAway();
-  // };
   
   console.log('user', user);
   console.log('routeTo', routeTo);

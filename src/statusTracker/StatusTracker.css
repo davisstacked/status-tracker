@@ -181,9 +181,21 @@
     border-radius: 4px;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items:center;
     justify-content: center;
-    overflow: scroll;
+}
+
+/* Dynamic sizing of Status Popper */
+.oneItem {
+    height: 29rem !important;
+}
+
+.twoItem {
+  height: 32.5rem !important;
+}
+
+.threeItem {
+    height: 36.5rem !important;
 }
 
 .status-popper-container {
@@ -193,6 +205,20 @@
     flex-direction: column;
     line-height: 2.2rem;
     font-size: 1.4rem;
+}
+
+/* Dynamic sizing of Status Popper Container */
+
+.oneItemContainer {
+    height: 24.3rem !important;
+}
+
+.twoItemContainer {
+    height: 27.4rem !important;
+}
+
+.threeItemContainer {
+    height: 31.5rem !important;
 }
 
 .twelvepx {
