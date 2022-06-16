@@ -14,30 +14,82 @@ const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, setStatus
   // timeSubmitted will be added to state on submit
   // 
 
-  const addStatus = (routeTo: any) => {
-    setStatuses((state) => [{ ...routeTo}, ...state]);
-  };
-  
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    // addComment(comment);
-    setUser((state) => ({...state, reviewedBy: routeTo.reviewedBy, currentlyWith: routeTo.routedTo}));
+  const date = new Date();
 
-    setRouteTo({ 
-      user: user.currentlyWith,
-      reviewedBy: user.reviewedBy,
-      dueDate: dueDate,
-      routedTo: 'Finalized',
-      comment: '',
-    });
-    // console.log(routeTo);
-    console.log(user);
-    handleClickAway();
+  const addStatus = (status: any) => {
+    // const newStatus = {
+    //   ...status,
+    //   timeSubmitted: date
+    // };
+    setStatuses((state) => [{ ...status}, ...state]);
   };
 
   const handleChange = (e: any) => {
     setRouteTo((state: any) => ({ ...state, [e.target.name]: e.target.value }));
   };
+  
+  const handleApprove = (e: any) => {
+    e.preventDefault();
+    // addComment(comment);
+    setUser((state) => ({...state, reviewedBy: routeTo.reviewedBy, currentlyWith: routeTo.routedTo}));
+    setRouteTo((state) => ({...state, status: "Approve"}))
+   
+    // setRouteTo((state) => ({...state, status}))
+    // addStatus(routeTo);
+    // setRouteTo({ 
+    //   user: user.currentlyWith,
+    //   reviewedBy: user.reviewedBy,
+    //   dueDate: dueDate,
+    //   routedTo: 'Finalized',
+    //   comment: '',
+    //   timeSubmitted: ''
+    // });
+    
+    handleClickAway();
+  };
+
+  const handleReject = (e: any) => {
+    e.preventDefault();
+    // addComment(comment);
+    setUser((state) => ({...state, reviewedBy: routeTo.reviewedBy, currentlyWith: routeTo.routedTo}));
+    setRouteTo((state) => ({...state, status: "Reject"}))
+   
+    // setRouteTo((state) => ({...state, status}))
+    // addStatus(routeTo);
+    // setRouteTo({ 
+    //   user: user.currentlyWith,
+    //   reviewedBy: user.reviewedBy,
+    //   dueDate: dueDate,
+    //   routedTo: 'Finalized',
+    //   comment: '',
+    //   timeSubmitted: ''
+    // });
+    
+    handleClickAway();
+  };
+
+  const handleInquire = (e: any) => {
+    e.preventDefault();
+    // addComment(comment);
+    setUser((state) => ({...state, reviewedBy: routeTo.reviewedBy, currentlyWith: routeTo.routedTo}));
+    setRouteTo((state) => ({...state, status: "Inquire"}))
+   
+    // setRouteTo((state) => ({...state, status}))
+    // addStatus(routeTo);
+    // setRouteTo({ 
+    //   user: user.currentlyWith,
+    //   reviewedBy: user.reviewedBy,
+    //   dueDate: dueDate,
+    //   routedTo: 'Finalized',
+    //   comment: '',
+    //   timeSubmitted: ''
+    // });
+    
+    handleClickAway();
+  };
+  
+  console.log('user', user);
+  console.log('routeTo', routeTo);
 
   return (
     <div className="Route-To-Popper">
@@ -52,11 +104,11 @@ const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, setStatus
           />
         </div>
         <div className="route-grid-item">
-          <label htmlFor="routeTo">Route To:</label>
+          <label htmlFor="routedTo">Route To:</label>
         </div>
         <div className="route-grid-item route-to-item-container">
           <div className="custom-select">
-            <select onChange={handleChange} className="route-select-dropdown route-to-item-container" id="routeTo" name="routeTo">
+            <select onChange={handleChange} className="route-select-dropdown route-to-item-container" id="routedTo" name="routedTo">
               <option className="select-items" value="Finalized">Finalized</option>
               <option className="select-items" value="IT Group">IT Group</option>
               <option className="select-items" value="Helder Melendez">Helder Melendez</option>
@@ -78,7 +130,7 @@ const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, setStatus
         />
       </div>
       <div className="route-to-button-container">
-      <button onClick={handleSubmit} className="route-to-buttons approve-button" type='submit'>
+      <button onClick={handleApprove} name="status" value="Approve" className="route-to-buttons approve-button" type='submit'>
         <div>
             <ThumbUpOffAltIcon />
         </div>
@@ -86,7 +138,7 @@ const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, setStatus
           Approve
         </div>
         </button>
-        <button onClick={handleSubmit} className="route-to-buttons reject-button" type='submit'>
+        <button onClick={handleReject} name="status" value="Reject" className="route-to-buttons reject-button" type='submit'>
             <div>
                 <ThumbDownOffAltIcon />
             </div>
@@ -94,7 +146,7 @@ const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, setStatus
                 Reject
             </div>
         </button>
-        <button onClick={handleSubmit} className="route-to-buttons inquire-button" type='submit'>
+        <button onClick={handleInquire} name="status" value="Inquire" className="route-to-buttons inquire-button" type='submit'>
             <div>
                 <QuestionMarkIcon />
             </div>

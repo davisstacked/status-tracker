@@ -36,8 +36,6 @@ const StatusTrackerPage = () => {
     timeSubmitted: ''
   });
 
-  console.log('statuses', statuses)
-
   return (
 
     <div className="Status-Tracker">

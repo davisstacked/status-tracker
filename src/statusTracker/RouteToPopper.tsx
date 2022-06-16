@@ -20,7 +20,6 @@ const RouteToPopper = ({ user, setUser, statuses, setStatuses, dueDate, routeTo,
   const id = open ? 'simple-popper' : undefined;
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    console.log('event', event.currentTarget);
     setAnchorEl(anchorEl ? null : event.currentTarget);
   };
   

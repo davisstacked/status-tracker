@@ -17,7 +17,6 @@ const dueDate = new Date(initialDueDate);
 
 const [value, setValue] = React.useState<any>(dueDate);
 
-console.log('value', value)
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <div className="Rout-to-item-container grid-item">
