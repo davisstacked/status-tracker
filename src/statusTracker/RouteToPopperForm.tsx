@@ -23,13 +23,13 @@ const RouteToPopperForm = ({ user, setUser, handleClickAway, statuses, addStatus
   const handleSubmit = (e: any) => {
     e.preventDefault();
     // addComment(comment);
-    // setUser((state) => ({...state, reviewedBy: routeTo.user, currentlyWith: routeTo.routedTo}));
-    // setRouteTo((state) => (
-    //   {...state, 
-    //     status: "Approve", 
-    //     reviewedBy: routeTo.user, 
-    //     user: routeTo.routedTo
-    //   }))
+    setUser((state) => ({...state, reviewedBy: routeTo.user, currentlyWith: routeTo.routedTo}));
+    setRouteTo((state) => (
+      {...state, 
+        reviewedBy: routeTo.user, 
+        user: routeTo.routedTo,
+        dueDate: '06/23/2022 - 6:50 PM'
+      }))
    
     addStatus();
     // setRouteTo({ 
